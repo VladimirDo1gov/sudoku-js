@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+}
+.sudoku-desk {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+}
+.cell {
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+}
+.not-change {
+    user-select: none;
+}
+.wrong {
+    border: 2px solid red;
+}
