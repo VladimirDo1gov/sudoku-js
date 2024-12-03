@@ -28,6 +28,16 @@ class Sudoku {
             }
         }
     }
+    addBlueColor() {
+        Object.keys(this.hiddenCellsHashTable).forEach((index) => {
+            this.cells[index].classList.add("blue-color");
+        });
+    }
+    removeBlueColor() {
+        Object.keys(this.hiddenCellsHashTable).forEach((index) => {
+            this.cells[index].classList.remove("blue-color");
+        });
+    }
     deleteDisabled() {
         Object.keys(this.hiddenCellsHashTable).forEach((index) => {
             this.cells[index].removeAttribute("disabled");
@@ -70,6 +80,7 @@ class Sudoku {
         this.fillCellsRandomValues();
         this.hideAndSaveRandomCellsValue(3);
         this.deleteDisabled();
+        this.addBlueColor();
         console.log(sudoku.hiddenCellsHashTable);
         console.log(sudoku.randomValues);
         this.buttonResult.onclick = () => {
@@ -82,6 +93,7 @@ class Sudoku {
 
     reset() {
         this.addDisabled();
+        this.removeBlueColor();
         this.hiddenCellsHashTable = {};
         this.randomValues = [];
         this.counterOfCorrectAnswers = 0;

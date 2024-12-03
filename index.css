@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 .container {
     max-width: 900px;
@@ -24,14 +25,39 @@
     border: 1px solid black;
     font-size: 18px;
 }
-.not-change {
-    user-select: none;
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
 }
+
+.btn {
+    padding: 6px 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(63, 63, 63, 0.168);
+    background-color: aliceblue;
+    font-size: 14px;
+    color: rgba(21, 21, 21, 0.978);
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: rgb(221, 239, 254);
+}
+.btn:focus {
+    border: 1px solid black;
+}
+.btn:active {
+    background-color: rgb(188, 224, 253);
+}
+
 .incorrect-answer-animation {
     animation: incorrectAnswer forwards 0.4s;
 }
 .correct-answer-animation {
     animation: correctAnswer forwards 0.4s;
+}
+.blue-color {
+    color: rgb(88, 163, 243);
 }
 
 @keyframes incorrectAnswer {
