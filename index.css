@@ -16,15 +16,56 @@
     grid-template-columns: repeat(3, 50px);
     grid-template-rows: repeat(3, 50px);
 }
+
 .cell {
-    border: 1px solid black;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    line-height: 50px;
+    border: 1px solid black;
     font-size: 18px;
 }
 .not-change {
     user-select: none;
 }
-.wrong {
-    border: 2px solid red;
+.incorrect-answer-animation {
+    animation: incorrectAnswer forwards 0.4s;
+}
+.correct-answer-animation {
+    animation: correctAnswer forwards 0.4s;
+}
+
+@keyframes incorrectAnswer {
+    0% {
+        border: 1px solid black;
+    }
+    25% {
+        border: 2px solid red;
+    }
+    50% {
+        border: 1px solid black;
+    }
+    75% {
+        border: 2px solid red;
+    }
+    100% {
+        border: 1px solid black;
+    }
+}
+
+@keyframes correctAnswer {
+    0% {
+        border: 1px solid black;
+    }
+    25% {
+        border: 2px solid green;
+    }
+    50% {
+        border: 1px solid black;
+    }
+    75% {
+        border: 2px solid green;
+    }
+    100% {
+        border: 1px solid black;
+    }
 }
